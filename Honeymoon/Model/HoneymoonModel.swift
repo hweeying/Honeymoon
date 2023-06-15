@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct Destination {
+    var place: String
+    var country: String
+    var image: String
+}

@@ -8,13 +8,32 @@
 import SwiftUI
 
 struct InfoRowComponent: View {
+
+    var title: String
+    var content: String
+    var hasDivider: Bool
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                Text(title)
+                    .foregroundColor(.gray)
+
+                Spacer()
+
+                Text(content)
+            }
+            
+            if hasDivider {
+                Divider()
+            }
+        }
     }
 }
 
 struct InfoRowComponent_Previews: PreviewProvider {
     static var previews: some View {
-        InfoRowComponent()
+        InfoRowComponent(title: "Title", content: "content", hasDivider: true)
+            .previewLayout(.sizeThatFits)
     }
 }
